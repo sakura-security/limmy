@@ -1,0 +1,19 @@
+#+TITLE: limmy
+#+AUTHOR: ~calx
+
+* how to run?
+
+1. put ~DISCORD_TOKEN=<your-discord-token>~ in ~.env~ file
+
+2. put sample config in ~limmy.yaml~ file
+
+   #+BEGIN_SRC yaml
+     cryptohackTracker:
+       - cryptohack: ""
+         discord: ""
+         channel: ""
+   #+END_SRC
+
+3. load limmy.asd
+4. run ~(reconfigure)~
+5. run ~(start)~
