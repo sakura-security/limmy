@@ -1,6 +1,8 @@
 #+TITLE: limmy
 #+AUTHOR: ~calx
 
+add bot: https://discord.com/oauth2/authorize?client_id=1338904246518677525&permissions=198656&integration_type=0&scope=bot
+
 * how to run?
 
 1. put ~DISCORD_TOKEN=<your-discord-token>~ in ~.env~ file
