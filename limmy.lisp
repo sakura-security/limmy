@@ -23,9 +23,7 @@
     (let ((cmd (string-trim " " (remove-mention (me) (lc:content msg)))))
       (cond ((string= cmd "ping!")
 	     (format t "[Channel] ~A~%" (lc:channel-id msg))
-	     (reply msg "pong!"))
-	    ((string= cmd "bye!")
-	     (stop))))))
+	     (reply msg "pong!"))))))
 
 (add-event-handler :on-message-create 'message-create)
 
@@ -57,7 +55,7 @@
 			       discord-username)
 		       (from-id channel :channel)))))
 
-(scheduler:create-scheduler-task +scheduler+ (cons "* * * * *" (lambda () (print-cryptohack-progress))))
+(scheduler:create-scheduler-task +scheduler+ (cons "0 6 * * *" (lambda () (print-cryptohack-progress))))
 
 ;; serious code
 (defun reconfigure ()
