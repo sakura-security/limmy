@@ -19,3 +19,12 @@ add bot: https://discord.com/oauth2/authorize?client_id=1338904246518677525&perm
 3. load limmy.asd
 4. run ~(reconfigure)~
 5. run ~(start)~
+
+* docker
+
+#+BEGIN_SRC sh
+  podman run -it --rm \
+	 -e `cat .env` \
+	 -v ./limmy.yaml:/home/limmy/limmy.yaml \
+	 limmy:latest
+#+END_SRC

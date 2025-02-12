@@ -1,7 +1,6 @@
 (in-package :limmy)
 
 ;; load discord token
-(cl-dotenv:load-env #p".env")
 (defparameter +discord-token+
   (uiop:getenv "DISCORD_TOKEN"))
 
@@ -55,7 +54,7 @@
 			       discord-username)
 		       (from-id channel :channel)))))
 
-(scheduler:create-scheduler-task +scheduler+ (cons "0 6 * * *" (lambda () (print-cryptohack-progress))))
+(scheduler:create-scheduler-task +scheduler+ (cons "0 10 * * *" (lambda () (print-cryptohack-progress))))
 
 ;; serious code
 (defun reconfigure ()
