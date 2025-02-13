@@ -11,9 +11,11 @@ add bot: https://discord.com/oauth2/authorize?client_id=1338904246518677525&perm
 
    #+BEGIN_SRC yaml
      cryptohackTracker:
-       - cryptohack: ""
-         discord: ""
-         channel: ""
+       channel: channel id
+       toPing: any role or user to ping
+       users:
+         - cryptohack: cryptohack username
+           discord: discord user id
    #+END_SRC
 
 3. load limmy.asd
@@ -24,6 +26,7 @@ add bot: https://discord.com/oauth2/authorize?client_id=1338904246518677525&perm
 
 #+BEGIN_SRC sh
   podman run -it --rm \
+	 --name limmy \
 	 -e `cat .env` \
 	 -v ./limmy.yaml:/home/limmy/limmy.yaml \
 	 limmy:latest

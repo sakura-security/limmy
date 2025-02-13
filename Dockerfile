@@ -18,7 +18,7 @@ RUN sbcl --non-interactive \
     --eval "(ql-util:without-prompting (ql-dist:install-dist \"http://dist.shirakumo.org/shirakumo.txt\"))"
 
 RUN sbcl --non-interactive \
-    --eval "(ql:quickload '(:cl-dotenv :cl-yaml :lispcord :scheduler :drakma :cl-json))"
+    --eval "(ql:quickload '(:cl-dotenv :cl-yaml :lispcord :scheduler :drakma :cl-json :local-time))"
 
 ENTRYPOINT ["sbcl", "--noinform", "--disable-debugger"]
 
@@ -26,7 +26,7 @@ CMD ["--eval", "(ql:quickload :limmy)", "--eval", "(limmy::start)"]
 
 RUN touch limmy.yaml
 
-COPY limmy.asd limmy.lisp package.lisp .
+COPY limmy.asd *.lisp .
 
 RUN mkdir -p /home/limmy/common-lisp && ln -sf /home/limmy/limmy.asd /home/limmy/common-lisp/limmy.asd
 

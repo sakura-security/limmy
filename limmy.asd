@@ -5,9 +5,10 @@
   :description "a cute bot"
 
   :components ((:file "package")
-	       (:file "limmy"))
+	       (:file "limmy")
+	       (:file "cryptohack"))
 
   :build-pathname "limmy"
   :entry-point "limmy::start"
 
-  :depends-on (:cl-dotenv :cl-yaml :lispcord :scheduler :drakma :cl-json))
+  :depends-on (:cl-dotenv :cl-yaml :lispcord :scheduler :drakma :cl-json :local-time))
